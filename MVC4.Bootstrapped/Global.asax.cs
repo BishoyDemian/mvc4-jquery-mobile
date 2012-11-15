@@ -13,7 +13,6 @@ namespace MVC4.Bootstrapped
     {
         protected void Application_Start()
         {
-            DisplayModeConfig.RegisterMobileDisplayModes(DisplayModeProvider.Instance);
             AreaRegistration.RegisterAllAreas();
             WebApiConfig.Register(GlobalConfiguration.Configuration);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);

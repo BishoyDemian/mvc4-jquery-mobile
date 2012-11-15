@@ -13,7 +13,14 @@
 </head>
 <body>
     @RenderBody()
-
+    @Html.Partial("_ViewSwitcher")
     @RenderSection("body-scripts", required: false)
+    <script type="text/javascript">
+        $(document).bind("mobileinit", function () {
+            // jQuery Mobile's Ajax navigation does not work in all cases (e.g.,
+            // when navigating from a mobile to a non-mobile page), especially when going    back, hence disabling it.
+            $.mobile.ajaxEnabled = false;
+        });
+    </script>
 </body>
 </html>

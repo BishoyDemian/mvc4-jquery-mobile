@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Http;
+﻿using System.Web.Http;
 using System.Web.Mvc;
-using System.Web.Optimization;
 using System.Web.Routing;
+using System.Web.WebPages;
+using MVC4.Bootstrapped.App_Start;
 
 namespace MVC4.Bootstrapped
 {
@@ -16,12 +13,11 @@ namespace MVC4.Bootstrapped
     {
         protected void Application_Start()
         {
+            DisplayModesConfig.RegisterMobileDisplayModes(DisplayModeProvider.Instance);
             AreaRegistration.RegisterAllAreas();
-
             WebApiConfig.Register(GlobalConfiguration.Configuration);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
-            BundleConfig.RegisterBundles(BundleTable.Bundles);
         }
     }
 }

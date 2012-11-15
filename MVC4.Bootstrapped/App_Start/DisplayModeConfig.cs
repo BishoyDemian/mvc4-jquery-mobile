@@ -8,6 +8,7 @@ namespace MVC4.Bootstrapped.App_Start
     {
         public static void RegisterMobileDisplayModes(DisplayModeProvider displayModeProvider)
         {
+            // remove existing mobile rules, as we want to treat iPad as normal desktop client since it is capable.
             displayModeProvider.Modes.Remove(displayModeProvider.Modes.First(d => d.DisplayModeId == "Mobile"));
 
             displayModeProvider.Modes.Add(new DefaultDisplayMode("Iphone")
@@ -31,13 +32,15 @@ namespace MVC4.Bootstrapped.App_Start
             displayModeProvider.Modes.Insert(0, new DefaultDisplayMode("Mobile")
             {
                 ContextCondition = (context =>
-                {
-                    return context.Request.UserAgent.ToLowerInvariant().Contains("iphone")
-                           || context.Request.UserAgent.ToLowerInvariant().Contains("ipod")
-                           || context.Request.UserAgent.ToLowerInvariant().Contains("android")
-                           || context.Request.UserAgent.ToLowerInvariant().Contains("windows phone os")
-                           || context.Request.UserAgent.ToLowerInvariant().Contains("blackberry");
-                })
+                                        {
+                                            var userAgent = context.Request.UserAgent.ToLowerInvariant();
+
+                                            return userAgent.Contains("iphone")
+                                                   || userAgent.Contains("ipod")
+                                                   || userAgent.Contains("android")
+                                                   || userAgent.Contains("windows phone os")
+                                                   || userAgent.Contains("blackberry");
+                                        })
             });
 
         }

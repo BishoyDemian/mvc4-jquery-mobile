@@ -38,6 +38,7 @@
             $(document).bind("mobileinit", function () {
                 // jQuery Mobile's Ajax navigation does not work in all cases (e.g.,
                 // when navigating from a mobile to a non-mobile page), especially when going    back, hence disabling it.
+                $.mobile.pushStateEnabled = false;
                 $.mobile.ajaxEnabled = false;
             });
         </script>

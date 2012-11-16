@@ -14,13 +14,23 @@
 </head>
     <body data-role="page">
         <header data-role="header">
-            @RenderSection("mobile_header", false)
+            <span>@ViewBag.Title</span>
         </header>
         <section data-role="content">
             @RenderBody()
         </section>
     
-        <footer data-role="footer"><a data-role="button" href="#">Go to desktop website</a></footer>
+        <footer data-role="footer" data-position="fixed">
+            <div data-role="navbar">
+                <ul>
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+        </footer>
+        
+        <br/><a href="#">Go to desktop website</a>
     
         @Scripts.Render("~/bundles/scripts/jquery")
         @Scripts.Render("~/bundles/scripts/jquery-val")

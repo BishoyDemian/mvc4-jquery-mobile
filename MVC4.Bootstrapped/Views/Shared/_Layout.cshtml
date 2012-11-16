@@ -1,17 +1,27 @@
-﻿@using MVC4.Bootstrapped.Helpers
+﻿@using System.Web.Optimization
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
-    @Html.RenderStyles()
-    @Html.RenderScripts()
-    @RenderSection("head-scripts", required: false)
+
+    @Styles.Render("~/bundles/styles/site")
+    @Scripts.Render("~/bundles/scripts/modernizr")
+    
+
+    @RenderSection("head_scripts", required: false)
 </head>
 <body>
     @RenderBody()
+    
+    <footer><a href="#">Go to mobile website</a></footer>
 
-    @RenderSection("body-scripts", required: false)
+    @Scripts.Render("~/bundles/scripts/jquery")
+    @Scripts.Render("~/bundles/scripts/jquery-val")
+    
+
+    @RenderSection("body_scripts", required: false)
+
 </body>
 </html>

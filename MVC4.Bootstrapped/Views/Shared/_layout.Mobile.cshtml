@@ -1,0 +1,38 @@
+﻿@using System.Web.Optimization
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, , initial-scale=1.0, maximum-scale=1.0" />
+    <title>@ViewBag.Title</title>
+    
+    @Styles.Render("~/bundles/styles/site")
+    @Styles.Render("~/bundles/styles/jquery-mobile")
+    @Scripts.Render("~/bundles/scripts/modernizr")
+
+    @RenderSection("head_scripts", required: false)
+</head>
+    <body data-role="page">
+        <header data-role="header">
+            @RenderSection("mobile_header", false)
+        </header>
+        <section data-role="content">
+            @RenderBody()
+        </section>
+    
+        <footer data-role="footer"><a data-role="button" href="#">Go to desktop website</a></footer>
+    
+        @Scripts.Render("~/bundles/scripts/jquery")
+        @Scripts.Render("~/bundles/scripts/jquery-val")
+        <script type="text/javascript">
+            $(document).bind("mobileinit", function () {
+                // jQuery Mobile's Ajax navigation does not work in all cases (e.g.,
+                // when navigating from a mobile to a non-mobile page), especially when going    back, hence disabling it.
+                $.mobile.ajaxEnabled = false;
+            });
+        </script>
+        @Scripts.Render("~/bundles/scripts/jquery-mobile")
+
+        @RenderSection("body_scripts", required: false)
+    </body>
+</html>

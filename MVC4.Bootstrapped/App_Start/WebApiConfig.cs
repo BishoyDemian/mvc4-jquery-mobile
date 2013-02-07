@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Web.Http;
 
-namespace MVC4.Bootstrapped
+namespace MVC4.jQueryMobile
 {
     public static class WebApiConfig
     {

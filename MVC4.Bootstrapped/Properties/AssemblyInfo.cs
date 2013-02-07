@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("MVC4.Bootstrapped")]
+[assembly: AssemblyTitle("MVC4.jQueryMobile")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("MVC4.Bootstrapped")]
+[assembly: AssemblyProduct("MVC4.jQueryMobile")]
 [assembly: AssemblyCopyright("Copyright ©  2012")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

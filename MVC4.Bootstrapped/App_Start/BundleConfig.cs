@@ -1,7 +1,6 @@
-﻿using System.Web;
-using System.Web.Optimization;
+﻿using System.Web.Optimization;
 
-namespace MVC4.Bootstrapped
+namespace MVC4.jQueryMobile
 {
     public class BundleConfig
     {

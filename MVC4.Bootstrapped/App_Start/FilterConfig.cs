@@ -1,7 +1,6 @@
-﻿using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 
-namespace MVC4.Bootstrapped
+namespace MVC4.jQueryMobile
 {
     public class FilterConfig
     {
